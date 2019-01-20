@@ -1,7 +1,11 @@
-# @lit79/platform
+# Платформа Ліцею №79
+
+You can watch latest build from https://lit79-platfrom.now.sh/
 
 > Цей додаток був створений для автоматизації шкільних навчальних процесів.
 
+> Ліцей інформаційних технологій № 79 — загальноосвітній державний навчальний заклад у місті Києві.
+ вулиця Шота Руставелі, 37, Київ, 01023   http://lit79.org.ua/   liceum79@gmail.com
 ## Build Setup
 
 ``` bash
@@ -19,4 +23,4 @@ $ npm start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+> Copyright (c) 2019 Misha Marinenko -- MIT License
