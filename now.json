@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "alias": "lit79-platfrom",
+  "github": {
+    "enabled": true,
+    "silent": false,
+    "autoJobCancelation": false
+  },
+  "builds": [
+    { "src": "package.json", "use": "@now/static-build" }
+  ]
+}
