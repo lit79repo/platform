@@ -1,7 +1,7 @@
 {
-  "name": "frontend",
-  "version": "1.0.0",
-  "description": "A lit79 frontend platfrom part.",
+  "name": "@lit79/platform",
+  "version": "0.0.0",
+  "description": "Цей додаток був створений для автоматизації шкільних навчальних процесів.",
   "author": "Misha Marinenko <0x77dev@protonmail.com>",
   "private": true,
   "scripts": {
@@ -14,13 +14,20 @@
     "now-build": "nuxt build --spa"
   },
   "dependencies": {
-    "nuxt": "^2.0.0"
+    "nuxt": "^1.0.0",
+    "vue-material": "latest"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "eslint": "^4.19.1",
-    "eslint-friendly-formatter": "^4.0.1",
-    "eslint-loader": "^2.1.1",
-    "eslint-plugin-vue": "^4.0.0"
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.3.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-html": "^3.1.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6"
   }
 }
