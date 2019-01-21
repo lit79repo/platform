@@ -1,13 +1,15 @@
 {
   "name": "frontend",
-  "version": "1.0.0",
-  "description": "A Vue.js project",
+  "version": "0.0.0",
+  "description": "...",
   "author": "Misha Marinenko <0x77dev@protonmail.com>",
+  "license": "See LICENSE",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "now-build": "npm run build"
   },
   "dependencies": {
     "vue": "^2.5.2",
