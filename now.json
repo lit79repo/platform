@@ -7,6 +7,10 @@
     "autoJobCancelation": false
   },
   "builds": [
-    { "src": "package.json", "use": "@now/static-build" }
-  ]
+    { "src": "package.json", "use": "@now/static-build" },
+    { "src": "backend/index.js", "use": "@now/node" }
+  ],
+    "routes": [
+        { "src": "/api(.*)", "dest": "backend/index.js" }
+    ]
 }
