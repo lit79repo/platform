@@ -1,23 +1,32 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <md-tabs class="md-primary" md-alignment="centered">
+      <md-tab @click="goTo('#/main')"  md-icon="home"></md-tab>
+      <md-tab @click="goTo('#/blogs')"   md-icon="pages"></md-tab>
+      <md-tab @click="goTo('#/lessons')"   md-icon="list"></md-tab>
+      <md-tab @click="goTo('#/l')"   md-icon="public"></md-tab>
+    </md-tabs>
     <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
-}
+  name: 'App',
+  methods: {
+    goTo: href => {
+      location.href=href;
+    }
+  }
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 </style>
