@@ -1,16 +1,13 @@
 {
   "version": 2,
-  "alias": "lit79-platfrom",
-  "github": {
-    "enabled": true,
-    "silent": false,
-    "autoJobCancelation": false
-  },
+  "name": "lit79",
   "builds": [
-    { "src": "package.json", "use": "@now/static-build" },
-    { "src": "backend/index.js", "use": "@now/node" }
+    {"src": "package.json", "use": "@now/static-build"}
   ],
-    "routes": [
-        { "src": "/api(.*)", "dest": "backend/index.js" }
-    ]
+  "routes": [
+    {"src": "^/js/(.*)", "dest": "/js/$1"},
+    {"src": "^/css/(.*)", "dest": "/css/$1"},
+    {"src": "^/img/(.*)", "dest": "/img/$1"},
+    {"src": ".*", "dest": "/index.html"}
+  ]
 }
