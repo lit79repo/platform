@@ -12,6 +12,8 @@
     "now-build": "npm run build"
   },
   "dependencies": {
+    "firebase": "^5.8.0",
+    "material-icons": "^0.3.0",
     "vue": "^2.5.2",
     "vue-material": "latest",
     "vue-router": "^3.0.1"

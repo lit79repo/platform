@@ -1,15 +1,43 @@
 import Vue from 'vue'
+import firebase from 'firebase'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Hello from '@/components/Hello'
+import Blogs from '@/components/Blogs'
+import lessons from '@/components/Lessons'
+import websiteSchool from '@/components/mainwebsite'
 
 Vue.use(Router)
 
-export default new Router({
+let router = new Router({
   routes: [
     {
+      path: '*',
+      redirect: '/'
+    },
+    {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      redirect: '/main'
+    },
+    {
+      path: '/main',
+      name: 'Hello',
+      component: Hello
+    },
+    {
+      path: '/blogs',
+      name: 'Blogs',
+      component: Blogs
+    },
+    {
+      path: '/lessons',
+      name: 'Lessons',
+      component: lessons
+    },
+    {
+    	path: "/l",
+    	name: "l",
+    	component: websiteSchool
     }
   ]
 })
+export default router
