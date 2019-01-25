@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "firebase": "^5.8.0",
-    "libui-node": "^0.2.1",
     "material-icons": "^0.3.0",
     "morgan": "^1.9.1",
     "vue": "^2.5.2",
