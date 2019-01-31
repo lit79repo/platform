@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+  	{{ lit79.h }}
   </div>
 </template>
 

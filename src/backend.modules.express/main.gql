@@ -1,0 +1,12 @@
+module.exports = `
+type Class {
+  name: String!
+}
+type User {
+  Class: Class!
+  firstName: String,
+  lastName: String,
+  email: String!,
+  password: String!
+}
+`

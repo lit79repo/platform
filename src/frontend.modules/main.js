@@ -4,6 +4,7 @@ export default class{
 	constructor(){
 		this.auth = auth;
 		this.get = get;
+		this.h = true;
 	}
 	bootstrap(){
 		this.getParams = () => {
