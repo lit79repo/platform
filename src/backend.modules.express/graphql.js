@@ -24,21 +24,21 @@ let homeworkvalue = [
 ]
 let getHomeWork = function(args) { 
     var id = args.id;
-    return homeworkvalue.filter(course => {
-        return course.id == id;
+    return homeworkvalue.filter(homework => {
+        return homework.id == id;
     })[0];
 }
 let getHomeWorks = function(args) {
     if (args.topic) {
         var topic = args.topic;
-        return homeworkvalue.filter(course => course.topic === topic);
+        return homeworkvalue.filter(homework => homework.topic === topic);
     } else {
         return homeworkvalue;
     }
 }
 let rootHomeWork = {
-    course: getHomeWork,
-    courses: getHomeWorks
+    homework: getHomeWork,
+    homeworks: getHomeWorks
 };
 var router = express.Router();
 router.use('/graphql', express_graphql({
