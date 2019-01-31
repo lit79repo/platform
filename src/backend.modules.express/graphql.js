@@ -24,16 +24,16 @@ let homeworkvalue = [
 ]
 let getHomeWork = function(args) { 
     var id = args.id;
-    return coursesData.filter(course => {
+    return homeworkvalue.filter(course => {
         return course.id == id;
     })[0];
 }
 let getHomeWorks = function(args) {
     if (args.topic) {
         var topic = args.topic;
-        return coursesData.filter(course => course.topic === topic);
+        return homeworkvalue.filter(course => course.topic === topic);
     } else {
-        return coursesData;
+        return homeworkvalue;
     }
 }
 let rootHomeWork = {
