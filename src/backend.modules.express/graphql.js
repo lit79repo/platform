@@ -36,14 +36,14 @@ let getHomeWorks = function(args) {
         return coursesData;
     }
 }
-let root = {
+let rootHomeWork = {
     course: getHomeWork,
     courses: getHomeWorks
 };
 var router = express.Router();
 router.use('/graphql', express_graphql({
     schema: homeworkSchema,
-    rootValue: homeworkvalue,
+    rootValue: rootHomeWork,
     graphiql: true
 }));
 module.exports = router;
