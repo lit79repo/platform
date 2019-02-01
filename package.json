@@ -17,6 +17,7 @@
     "graphql": "^14.1.1",
     "material-icons": "^0.3.0",
     "morgan": "^1.9.1",
+    "nano": "^8.0.0",
     "sqlite3": "^4.0.6",
     "vue": "^2.5.2",
     "vue-material": "latest",

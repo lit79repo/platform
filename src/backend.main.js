@@ -1,7 +1,7 @@
 let path = require("path");
 let config = require(path.join(__dirname, "../config/backend.js"));
 let fs = require("fs");
-let graphqlRouter = require("./backend.modules.express/graphql");
+let apiRouter = require("./backend.modules.express/api");
 let diagRouter = require("./backend.modules.express/diag");
 let express = require("express");
 let logger = require("morgan");
@@ -12,7 +12,7 @@ app.use(logger('common', {stream: fs.createWriteStream('./access.log', {flags: '
 app.use(logger('dev'));
 
 app.use("/diag", diagRouter);
-app.use("/", graphqlRouter);
+app.use("/api", apiRouter);
 
 app.listen(config.port, () => {
 	console.log("Listening on", config.port);

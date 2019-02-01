@@ -1,5 +1,3 @@
-let express = require('express');
-let express_graphql = require('express-graphql');
 let { buildSchema } = require('graphql');
 
 let homeworkSchema = buildSchema(`
@@ -40,10 +38,4 @@ let rootHomeWork = {
     homework: getHomeWork,
     homeworks: getHomeWorks
 };
-var router = express.Router();
-router.use('/graphql', express_graphql({
-    schema: homeworkSchema,
-    rootValue: rootHomeWork,
-    graphiql: true
-}));
-module.exports = router;
+module.exports = {root: rootHomeWork, schema: homeworkSchema};
