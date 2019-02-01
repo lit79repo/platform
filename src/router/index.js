@@ -5,7 +5,7 @@ import Hello from '@/components/Hello'
 import Blogs from '@/components/Blogs'
 import lessons from '@/components/Lessons'
 import websiteSchool from '@/components/mainwebsite'
-
+import Auth from '@/components/auth'
 Vue.use(Router)
 
 let router = new Router({
@@ -17,6 +17,10 @@ let router = new Router({
     {
       path: '/',
       redirect: '/main'
+    },
+    {
+      path: '/auth',
+      component: Auth
     },
     {
       path: '/main',
