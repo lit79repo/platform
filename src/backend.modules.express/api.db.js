@@ -12,14 +12,6 @@ let homeworkSchema = buildSchema(`
         content: String
     }
 `);
-let homeworkvalue = [
-    {
-        Class: "8-A",
-        Lesson: 'Math',
-        author: 'Misha Marinenko',
-        content: '#1, #2, #3'
-    }
-]
 let getHomeWork = function(args) { 
     var id = args.id;
     return homeworkvalue.filter(homework => {
