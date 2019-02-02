@@ -1,6 +1,6 @@
 let express = require('express');
 let express_graphql = require('express-graphql');
-let apiHomework = require("./api.homework");
+let apiHomework = require("./api.db");
 var router = express.Router();
 router.get("/", (req, res)=>{
     res.send(`
