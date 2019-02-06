@@ -6,7 +6,7 @@
   "scripts": {
     "backend:start": "yarn start",
     "start": "node backend/index.js",
-    "backend:dev": "nodemon backend/index.js",
+    "backend:dev": "nodemon -w ./backend/ backend/index.js",
     "frontend:build": "",
     "frontend": "yarn frontend:build",
     "frontend:dev": ""
@@ -14,5 +14,9 @@
   "repository": "https://github.com/lit79repo/platform",
   "author": "Misha Marinenko <0x77dev@protonmail.com>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.9"
+  }
 }
