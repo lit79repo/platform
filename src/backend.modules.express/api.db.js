@@ -1,3 +1,0 @@
-
-let db = require("./db");
-
