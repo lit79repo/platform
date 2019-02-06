@@ -34,17 +34,8 @@ class database{
         return Return;
     }
     read(segment){
-        var Return;
-        fs.readFile(path.join(this.mainPath, segment+".json"), (err, data) => {
-            if(err) {
-                Return = err;
-                throw err;
-            }else{
-                Return = true;
-            }
-            console.log(data.toString());
-          });
-        return Return;
+        var file = fs.readFileSync(path.join(this.mainPath, segment+".json"), 'utf8');
+        return JSON.parse(file);
     }
 }
 module.exports = database;
