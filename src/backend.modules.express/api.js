@@ -1,19 +1,10 @@
 let express = require('express');
 let express_graphql = require('express-graphql');
-let apiHomework = require("./api.db");
+let graphqlModule = require("./api.db");
 var router = express.Router();
-router.get("/", (req, res)=>{
-    res.send(`
-    <html>
-        <ul>
-            <li><a href="/api/hw"><strong>/hw</strong></a>: HomeWork GraphiQL</li>
-        </ul>
-    </html>
-    `);
-});
-router.use('/hw', express_graphql({
-    schema: apiHomework.schema,
-    rootValue: apiHomework.root,
+router.use('/', express_graphql({
+    schema: graphqlModule.schema,
+    rootValue: graphqlModule.root,
     graphiql: true
 }));
 module.exports = router;
