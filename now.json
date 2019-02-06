@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "name": "nodejs-express",
+    "name": "insiderlit79",
     "builds": [
         { "src": "backend/index.js", "use": "@now/node" }
     ],
