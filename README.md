@@ -20,5 +20,11 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
+## Directory Tree
+
+* ` backend ` - Backend sources
+* ` frontend ` - Frontend sources.
+* ` public ` - Files that served over backend http server (e.g. express).
+
 
 > Copyright (c) 2019 Misha Marinenko -- MIT License
