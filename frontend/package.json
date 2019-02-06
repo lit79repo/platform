@@ -1,23 +1,15 @@
 {
-  "name": "lit79",
-  "version": "0.0.0",
-  "description": "Цей додаток був створений для автоматизації шкільних навчальних процесів.",
-  "main": "index.js",
-  "scripts": {
-    "backend:start": "yarn start",
-    "start": "node backend/index.js",
-    "backend:dev": "nodemon -w ./backend/ backend/index.js",
-    "frontend:build": "cd frontend ; node build/build.js",
-    "frontend": "yarn frontend:build",
-    "frontend:dev": "cd frontend ; webpack-dev-server --inline --progress --config build/webpack.dev.conf.js"
-  },
-  "repository": "https://github.com/lit79repo/platform",
+  "name": "@lit79/frontend",
+  "version": "1.0.0",
+  "description": "A lit79 platform frontend.",
   "author": "Misha Marinenko <0x77dev@protonmail.com>",
-  "license": "MIT",
-  "private": false,
+  "private": true,
+  "scripts": {
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "start": "npm run dev",
+    "build": "node build/build.js"
+  },
   "dependencies": {
-    "express": "^4.16.4",
-    "nodemon": "^1.18.9",
     "shards-vue": "^1.0.7",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
