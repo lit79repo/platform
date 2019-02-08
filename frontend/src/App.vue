@@ -9,6 +9,12 @@
     </ion-app>
   </div>
 </template>
+<style>
+@import url("https://fonts.googleapis.com/css?family=PT+Mono");
+* {
+  font-family: "PT Mono", monospace;
+}
+</style>
 
 <script>
 export default {
