@@ -10,6 +10,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const WebpackPwaManifest = require('webpack-pwa-manifest')
+const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin')
 
 const env = require('../config/prod.env')
 
@@ -28,6 +30,24 @@ const webpackConfig = merge(baseWebpackConfig, {
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
   plugins: [
+    new ServiceWorkerWebpackPlugin({
+      entry: path.join(__dirname, 'src/sw.js'),
+    }),
+    new WebpackPwaManifest({
+      name: '79',
+      short_name: '79',
+      description: 'http://lit79.org.ua',
+      background_color: '#ffffff',
+      crossorigin: 'use-credentials',
+      display: "standalone",
+      start_url: "/",
+      icons: [
+        {
+          src: path.resolve('frontend/src/assets/logo.png'),
+          sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
+        }
+      ]
+    }),
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
       'process.env': env
@@ -81,7 +101,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks (module) {
+      minChunks(module) {
         // any required modules inside node_modules are extracted to vendor
         return (
           module.resource &&
