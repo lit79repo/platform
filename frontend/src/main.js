@@ -3,15 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import ShardsVue from 'shards-vue'
 import Ionic from '@ionic/vue'
 
-import 'bootstrap/dist/css/bootstrap.css'
-import 'shards-ui/dist/css/shards.css'
-
-
 Vue.use(Ionic);
-Vue.use(ShardsVue);
 
 Vue.config.productionTip = false
 
