@@ -1,14 +1,19 @@
 <template>
   <div id="app">
-    
-    <router-view/>
+    <ion-app>
+      <ion-page class="show-page">
+        <ion-content class="content" padding>
+          <router-view/>
+        </ion-content>
+      </ion-page>
+    </ion-app>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
-}
+  name: "App"
+};
 </script>
 
 <style>

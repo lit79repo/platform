@@ -2,6 +2,20 @@
 # yarn lockfile v1
 
 
+"@ionic/core@4.0.0-beta.12":
+  version "4.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/@ionic/core/-/core-4.0.0-beta.12.tgz#2568f111899b8e2faf03b62d28ead4a6c6c8d09d"
+  integrity sha512-rchLkeSzJansqED84pmbt3zj5NTMWr6g9de/mW9FdvqYhXfm9qGWqeAYTZ2Qvgd4IHZ3/W3Le+0b43A5rkBS6A==
+  dependencies:
+    ionicons "4.4.4"
+
+"@ionic/vue@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@ionic/vue/-/vue-0.0.1.tgz#9dd177f708481da3e86baae52777007e17257e7a"
+  integrity sha512-922r8UtCjdP3mnkrbwqLNQsZGTisi87ACTvkV5NaLYXq30d+4ao091Xun2L4gy1EMCMmAeQu8af7HgaCgVVOqw==
+  dependencies:
+    "@ionic/core" "4.0.0-beta.12"
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -305,6 +319,14 @@ axios@^0.17.0:
   integrity sha1-LY4+XQvb1zJ/kbyBT1xXZg+Bgk0=
   dependencies:
     follow-redirects "^1.2.5"
+    is-buffer "^1.1.5"
+
+axios@^0.18.0:
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.18.0.tgz#32d53e4851efdc0a11993b6cd000789d70c05102"
+  integrity sha1-MtU+SFHv3AoRmTts0AB4nXDAUQI=
+  dependencies:
+    follow-redirects "^1.3.0"
     is-buffer "^1.1.5"
 
 babel-code-frame@^6.26.0:
@@ -2758,7 +2780,7 @@ follow-redirects@1.0.0:
   dependencies:
     debug "^2.2.0"
 
-follow-redirects@^1.0.0, follow-redirects@^1.2.5:
+follow-redirects@^1.0.0, follow-redirects@^1.2.5, follow-redirects@^1.3.0:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.6.1.tgz#514973c44b5757368bad8bddfe52f81f015c94cb"
   integrity sha512-t2JCjbzxQpWvbhts3l6SH1DKzSrx8a+SsaVf4h6bG4kOXUuPYS/kg2Lr4gQSb7eemaHqJkOThF1BGyjlUkO1GQ==
@@ -3401,6 +3423,11 @@ invert-kv@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
   integrity sha1-EEqOSqym09jNFXqO+L+rLXo//bY=
+
+ionicons@4.4.4:
+  version "4.4.4"
+  resolved "https://registry.yarnpkg.com/ionicons/-/ionicons-4.4.4.tgz#d2b2dfe240e4c8686f59acd91c9c8c1dd13931c1"
+  integrity sha512-HOcxF+pFHQQA4x7zy1eyuzTsaJzyyKKGYGsqvMMnB26rvp9sTKjA8JDZ4L4GRSNWliHC/oXbBoidglJa/0kiPA==
 
 ip@^1.1.0, ip@^1.1.5:
   version "1.1.5"
