@@ -15,7 +15,7 @@
                 <ion-input v-model="code" type="password"></ion-input>
               </ion-item>
               <ion-button
-                @click="gotoPanel()"
+                @click="goto('main')"
                 mode="ios"
                 expand="full"
                 fill="outline"
@@ -36,8 +36,8 @@ export default {
     };
   },
   methods: {
-    gotoPanel: () => {
-      location.href = "#/panel";
+    goto: to => {
+      location.href = "#/" + to;
     }
   }
 };
