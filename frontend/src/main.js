@@ -4,11 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Ionic from '@ionic/vue'
-import runtime from 'serviceworker-webpack-plugin/lib/runtime';
+/*import runtime from 'serviceworker-webpack-plugin/lib/runtime';
  
 if ('serviceWorker' in navigator) {
   const registration = runtime.register();
-}
+}*/
 Vue.use(Ionic);
 
 Vue.config.productionTip = false
