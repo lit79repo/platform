@@ -1,4 +1,6 @@
 let cluster = require('cluster');
+let path = require("path");
+
 console.log("// made by 0x77")
 //Run backend compile!
 let childProcess = require('child_process');
@@ -43,8 +45,6 @@ if (cluster.isMaster) {
 } else {
     let express = require("express");
     let dbRoute = require("./db.route");
-    let path = require("path");
-
     let app = express();
     let port = process.env.PORT || 3000;
 
