@@ -4,6 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Ionic from '@ionic/vue'
+import 'animate.css'
+
 Vue.use(Ionic);
 
 Vue.config.productionTip = false

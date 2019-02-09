@@ -19,7 +19,7 @@
         <ion-list class="list list-ios hydrated">
           <ion-item
             button
-            onclick="showDetail('Markdown')"
+            @click="goto('lessons')"
             class="in-list item ion-activatable ion-focusable item-label hydrated"
           >
             <ion-icon slot="start" name="list" mode="ios" role="img" class="hydrated"></ion-icon>
@@ -29,7 +29,7 @@
           </ion-item>
           <ion-item
             button
-            onclick="showDetail('Markdown')"
+            @click="goto('files')"
             class="in-list item ion-activatable ion-focusable item-label hydrated"
           >
             <ion-icon slot="start" name="cloud-circle" mode="ios" role="img" class="hydrated"></ion-icon>
@@ -39,7 +39,7 @@
           </ion-item>
           <ion-item
             button
-            onclick="showDetail('Markdown')"
+            @click="goto('news')"
             class="in-list item ion-activatable ion-focusable item-label hydrated"
           >
             <ion-icon slot="start" name="barcode" mode="ios" role="img" class="hydrated"></ion-icon>
@@ -49,7 +49,7 @@
           </ion-item>
           <ion-item
             button
-            onclick="showDetail('Markdown')"
+            @click="goto('homework')"
             class="in-list item ion-activatable ion-focusable item-label hydrated"
           >
             <ion-icon
@@ -68,3 +68,12 @@
     </nav-home>
   </ion-nav>
 </template>
+<script>
+export default {
+  methods: {
+    goto: to => {
+      location.href = "#/" + to;
+    }
+  }
+};
+</script>

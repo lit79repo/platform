@@ -7,6 +7,7 @@
     <ion-toast-controller class="hydrated"></ion-toast-controller>
   </div>
 </template>
+
 <script>
 import axios from "axios";
 export default {
