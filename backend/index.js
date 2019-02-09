@@ -1,5 +1,5 @@
 let cluster = require('cluster');
-
+console.log("// made by 0x77")
 //Run backend compile!
 let childProcess = require('child_process');
 let runScript = (scriptPath, callback) => {
