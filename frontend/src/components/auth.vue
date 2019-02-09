@@ -5,7 +5,7 @@
         <ion-col>
           <ion-card mode="ios" color="dark">
             <ion-card-header>
-              <ion-card-subtitle>Лицей №79</ion-card-subtitle>
+              <ion-card-subtitle>Лицей 79</ion-card-subtitle>
               <ion-card-title>Авторизация</ion-card-title>
             </ion-card-header>
 
@@ -24,6 +24,18 @@
             </ion-card-content>
           </ion-card>
         </ion-col>
+        <br>
+        <ion-row>
+          <ion-col>made with
+            <ion-icon name="heart"></ion-icon>using
+            <ion-icon name="logo-javascript"></ion-icon>
+          </ion-col>on
+          <a href="https://github.com/lit79repo/platform" target="_blank">
+            <ion-icon name="logo-github"></ion-icon>
+          </a>
+          <ion-icon name="logo-freebsd-devil"></ion-icon>
+          <ion-icon name="logo-tux"></ion-icon>
+        </ion-row>
       </ion-row>
     </ion-grid>
   </div>

@@ -1,39 +1,54 @@
-let express = require("express");
-let dbRoute = require("./db.route");
-let path = require("path");
-let childProcess = require('child_process');
-let app = express();
-let port = process.env.PORT || 3000;
-let runScript = (scriptPath, callback) => {
+let cluster = require('cluster');
 
-    // keep track of whether callback has been invoked to prevent multiple invocations
-    var invoked = false;
+if (cluster.isMaster) {
 
-    var process = childProcess.fork(scriptPath);
+    var cpuCount = require('os').cpus().length;
 
-    // listen for errors as they may prevent the exit event from firing
-    process.on('error', function (err) {
-        if (invoked) return;
-        invoked = true;
-        callback(err);
-    });
-
-    // execute the callback once the process has finished running
-    process.on('exit', function (code) {
-        if (invoked) return;
-        invoked = true;
-        var err = code === 0 ? null : new Error('exit code ' + code);
-        callback(err);
-    });
-
-}
-runScript(path.join(__dirname, "..", "frontend", "build", "build.js"), (err) => {
-    if (err) {
-        console.log("error building backend.");
+    // Create a worker for each CPU
+    for (var i = 0; i < cpuCount; i += 1) {
+        cluster.fork();
     }
 
-});
-app.use("/", express.static(path.join(__dirname, "..", "frontend", "dist")));
-app.use("/db", dbRoute);
+} else {
+    let express = require("express");
+    let dbRoute = require("./db.route");
+    let path = require("path");
+    let childProcess = require('child_process');
+    let app = express();
+    let port = process.env.PORT || 3000;
+    let runScript = (scriptPath, callback) => {
 
-app.listen(port, console.log);
+        // keep track of whether callback has been invoked to prevent multiple invocations
+        var invoked = false;
+
+        var process = childProcess.fork(scriptPath);
+
+        // listen for errors as they may prevent the exit event from firing
+        process.on('error', function (err) {
+            if (invoked) return;
+            invoked = true;
+            callback(err);
+        });
+
+        // execute the callback once the process has finished running
+        process.on('exit', function (code) {
+            if (invoked) return;
+            invoked = true;
+            var err = code === 0 ? null : new Error('exit code ' + code);
+            callback(err);
+        });
+
+    }
+    runScript(path.join(__dirname, "..", "frontend", "build", "build.js"), (err) => {
+        if (err) {
+            console.log("error building backend.");
+        }
+
+    });
+    app.use("/", express.static(path.join(__dirname, "..", "frontend", "dist")));
+    app.use("/db", dbRoute);
+    app.get("/debug", (req, res) => {
+        res.json({ cluster: { worker_id: cluster.worker.id } })
+    });
+    app.listen(port, () => { console.log(port);console.log('Worker %d running!', cluster.worker.id); });
+}

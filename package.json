@@ -6,7 +6,7 @@
   "scripts": {
     "backend:start": "yarn start",
     "start": "node backend/index.js",
-    "backend:dev": "nodemon -w ./backend/ backend/index.js",
+    "backend:dev": "nodemon -w ./frontend/src -w ./backend/ backend/index.js",
     "frontend:build": "cd frontend ; node build/build.js",
     "frontend": "yarn frontend:build",
     "frontend:dev": "cd frontend ; webpack-dev-server --inline --progress --config build/webpack.dev.conf.js"
