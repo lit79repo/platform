@@ -3,6 +3,7 @@
 'use strict';
 let parser = new require('argparse').ArgumentParser();
 let express = require("express");
+const statusMonitor = require('express-status-monitor')();
 let dbRoute = require("./db.route");
 let app = express();
 let port = process.env.PORT || 3000;
@@ -30,6 +31,8 @@ if (args.cluster) {
                 }
             })
         });
+        app.use(statusMonitor);
+        app.get('/status', statusMonitor.pageRoute)
         app.listen(port, () => {
             console.log(port);
             console.log('Worker %d running!', cluster.worker.id);
@@ -42,6 +45,7 @@ if (args.cluster) {
     app.get("/debug", (req, res) => {
         res.json({});
     });
+    app.use(statusMonitor);
     app.listen(port, () => {
         console.log(port);
     });

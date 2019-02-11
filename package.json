@@ -19,7 +19,9 @@
     "dependencies": {
         "argparse": "^1.0.10",
         "express": "^4.16.4",
+        "express-status-monitor": "^1.2.3",
         "nodemon": "^1.18.9",
+        "request": "^2.88.0",
         "vue": "^2.5.2",
         "vue-router": "^3.0.1"
     },

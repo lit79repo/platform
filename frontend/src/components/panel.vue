@@ -16,12 +16,8 @@
       </ion-item>
     </ion-list>
 
-    <vue-editor
-      id="editor"
-      useCustomImageHandler
-      @imageAdded="handleImageAdded"
-      v-model="htmlForEditor"
-    ></vue-editor>
+    <vue-editor id="editor" useCustomImageHandler v-model="htmlForEditor"></vue-editor>
+    <button @click="upload()">upload</button>
   </div>
 </template>
 <script>
@@ -39,27 +35,23 @@ export default {
   },
 
   methods: {
-    handleImageAdded: function(file, Editor, cursorLocation, resetUploader) {
-      // An example of using FormData
-      // NOTE: Your key could be different such as:
-      // formData.append('file', file)
-
+    upload: function(file, Editor, cursorLocation, resetUploader) {
       var formData = new FormData();
-      formData.append("image", file);
-
+      let data = this.htmlForEditor;
+      console.log(data);
+      //formData.set(name, value, filename);
+      formData.set(
+        "data",
+        JSON.stringify({
+          data: data
+        })
+      );
+      formData.set("segment", "lessons");
       axios({
         url: location.protocol + "//" + location.hostname + ":3000/db/dev",
         method: "POST",
         data: formData
-      })
-        .then(result => {
-          let url = result.data.url; // Get url from response
-          Editor.insertEmbed(cursorLocation, "image", url);
-          resetUploader();
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      });
     }
   }
 };
