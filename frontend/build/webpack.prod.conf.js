@@ -11,7 +11,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const WebpackPwaManifest = require('webpack-pwa-manifest')
-const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin')
+//const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin')
 
 const env = require('../config/prod.env')
 
@@ -30,9 +30,9 @@ const webpackConfig = merge(baseWebpackConfig, {
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
   plugins: [
-    new ServiceWorkerWebpackPlugin({
+    /*new ServiceWorkerWebpackPlugin({
       entry: path.join(__dirname, 'src/sw.js'),
-    }),
+    }),*/
     new WebpackPwaManifest({
       name: '79',
       short_name: '79',
@@ -41,12 +41,10 @@ const webpackConfig = merge(baseWebpackConfig, {
       crossorigin: 'use-credentials',
       display: "standalone",
       start_url: "/",
-      icons: [
-        {
-          src: path.resolve('frontend/src/assets/logo.png'),
-          sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
-        }
-      ]
+      icons: [{
+        src: path.resolve('frontend/src/assets/logo.png'),
+        sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
+      }]
     }),
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
@@ -73,9 +71,14 @@ const webpackConfig = merge(baseWebpackConfig, {
     // Compress extracted CSS. We are using this plugin so that possible
     // duplicated CSS from different components can be deduped.
     new OptimizeCSSPlugin({
-      cssProcessorOptions: config.build.productionSourceMap
-        ? { safe: true, map: { inline: false } }
-        : { safe: true }
+      cssProcessorOptions: config.build.productionSourceMap ? {
+        safe: true,
+        map: {
+          inline: false
+        }
+      } : {
+        safe: true
+      }
     }),
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
@@ -129,13 +132,11 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
 
     // copy custom static assets
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../static'),
-        to: config.build.assetsSubDirectory,
-        ignore: ['.*']
-      }
-    ])
+    new CopyWebpackPlugin([{
+      from: path.resolve(__dirname, '../static'),
+      to: config.build.assetsSubDirectory,
+      ignore: ['.*']
+    }])
   ]
 })
 
