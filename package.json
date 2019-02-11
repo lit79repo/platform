@@ -1,0 +1,20 @@
+{
+  "name": "lit79",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "frontend:init": "cd frontend ; yarn install",
+    "backend:init": "cd backend ; yarn install",
+    "init": "yarn run frontend:init ; yarn run backend:init",
+    "frontend:dev": "cd frontend ; yarn run dev",
+    "backend:dev": "cd backend ; yarn run dev",
+    "frontend:build": "cd frontend ; yarn run build",
+    "backend:run": "cd frontend ; yarn run build"
+  },
+  "repository": "https://github.com/lit79repo/platform",
+  "author": "Misha Marinenko <0x77dev@protonmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "yarn": "^1.13.0"
+  }
+}
