@@ -15,6 +15,7 @@
   "author": "Misha Marinenko <0x77dev@protonmail.com>",
   "license": "MIT",
   "dependencies": {
+    "material-icons": "^0.3.0",
     "yarn": "^1.13.0"
   }
 }

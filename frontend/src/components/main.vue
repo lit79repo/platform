@@ -1,5 +1,8 @@
 <template>
-  <div class="hello"></div>
+  <div class="hello">
+    <md-empty-state md-icon="school" md-label="Добро пожаловать" md-description="Выберете пункт из меню">
+    </md-empty-state>
+  </div>
 </template>
 
 <script>

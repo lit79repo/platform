@@ -59,9 +59,10 @@ export default {
   },
   methods: {},
   mounted() {
-    axios
-      .get(this.url + "/db/get/lessons")
-      .then(response => (this.data = response));
+    axios.get(this.url + "/db/get/lessons").then(response => {
+      this.data = response;
+      console.log(response);
+    });
   }
 };
 </script>
