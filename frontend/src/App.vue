@@ -45,4 +45,6 @@ export default {
   position: absolute;
   bottom: 0;
 }
+.md-bottom-bar > .md-ripple {
+}
 </style>

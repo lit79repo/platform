@@ -29,4 +29,7 @@ router.post("/find/:query", (req, res) => {
 router.post("/exec", (req, res) => {
     res.json(eval(req.body.data));
 });
-module.exports = router;
+module.exports = {
+    router: router,
+    db: db
+};

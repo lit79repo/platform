@@ -8,8 +8,13 @@
 
       <md-card-content>
         <md-steppers md-vertical>
-          <md-step md-label="Выберете ваш класс" md-description="Из данного списка ниже:"></md-step>
-          <md-step v-for="day in data" :md-label="day.className">
+          <md-step
+            v-if="errorGetData !== true"
+            md-label="Выберете ваш класс"
+            md-description="Из данного списка ниже:"
+          ></md-step>
+          <md-step v-else md-label="Ошибка Загрузки" md-description="Попробуйте чуть позже"></md-step>
+          <md-step v-if="errorGetData !== true" v-for="day in data" :md-label="day.className">
             <md-list>Понедельник:
               <md-list-item v-for="lesson in day.lessons[0]">{{ lesson }}</md-list-item>
             </md-list>
@@ -27,6 +32,9 @@
             </md-list>
           </md-step>
         </md-steppers>
+        <md-snackbar md-position="center" :md-active.sync="errorGetData" md-persistent>
+          <span>Ошибка Загрузки</span>
+        </md-snackbar>
       </md-card-content>
     </md-card>
   </div>
@@ -37,10 +45,11 @@ export default {
   name: "Lessons",
   data() {
     return {
+      errorGetData: false,
       url:
         location.protocol +
         "//" +
-        location.hostname +
+        location.hostname + //+ ":3000",
         (location.port ? ":" + location.port : ""),
       loading: true,
       data: [
@@ -59,10 +68,21 @@ export default {
   },
   methods: {},
   mounted() {
-    axios.get(this.url + "/db/get/lessons").then(response => {
-      this.data = response;
-      console.log(response);
-    });
+    axios
+      .get(this.url + "/db/get/lessons")
+      .then(response => {
+        this.data = response.data;
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error.response);
+        this.errorGetData = true;
+      });
   }
 };
 </script>
+<style>
+.md-snackbar {
+  border-radius: 3px;
+}
+</style>
