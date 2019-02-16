@@ -1,0 +1,10 @@
+{
+    "version": 2,
+    "name": "lit79",
+    "builds": [
+        { "src": "bin/www", "use": "@now/node" }
+    ],
+    "routes": [
+        { "src": "/(.*)", "dest": "index.js" }
+    ]
+}
