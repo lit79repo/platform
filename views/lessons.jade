@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  table
+    each book, i in classes
+      pre= book.Class
+      each lesson, i in book.lessons
+        if i == 0
+          h1 Понеділок
+          td= lesson
+        if i == 0
+          h1 Вівторок
+          td= lesson
+        if i == 0
+          h1 Середа
+          td= lesson
+        if i == 0
+          h1 Четверг
+          td= lesson
+        if i == 0
+          h1 П'ятниця
+          td= lesson
+        
+      
