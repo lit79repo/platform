@@ -2,15 +2,23 @@ extends layout
 
 block content  
   h1= title
-  ul
-    for Class in classes
-      li= Class.Class
-      ul
+  div.gradientdot 
+  for Class in classes
+    .tile.is-ancestor
+    .tile.is-parent
+      .tile.is-child.box.card
+        div.title= Class.Class
+        br
         for Lesson, i in Class.lessons
-          pre= i
-          li= Lesson 
+          if i == 0
+            p.subtitle Понеділок
+          if i == 1
+            p.subtitle Вівторок
+          if i == 2
+            p.subtitle Середа
+          if i == 3
+            p.subtitle Четвер
+          if i == 4
+            p.subtitle П'ятниця
+          p= Lesson 
           br
-      
-        
-        
-      

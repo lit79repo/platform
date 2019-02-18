@@ -1,18 +1,53 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons&style=outlined");
+@import url("https://unpkg.com/bulma");
+html{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+ 
 }
 
-a {
-  color: #00B7FF;
-}
-.darkmode, .darkmode>*{
-  color: white;
-  background: black;
-}
 button{
   border: none;
   text-align: center;
   text-decoration: none;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+div.gradientdot{
+  position: absolute;
+  border-radius: 16px;
+  width: 10px;
+  height: 80%;
+  margin: 5px;
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.lessonsG{
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+.button{
+  border: 0;
+  left: 5px;
+}
+div.gradientdot1{
+  position: absolute;
+  border-radius: 16px;
+  width: 10px;
+  height: 80%;
+  margin: 5px;
+  background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
 }
