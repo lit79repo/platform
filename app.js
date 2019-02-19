@@ -13,6 +13,11 @@ var fmRouter = require('./routes/fm');
 
 var app = express();
 
+var http = require("http");
+setInterval(function() {
+    http.get("http://lit79p.herokuapp.com");
+}, 15000);
+
 app.use((req,res,next)=>{
   res.set('Service-Worker-Allowed', 1);
   next();
