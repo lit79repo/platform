@@ -5,11 +5,11 @@
     "background_color": "#667eea",
     "display": "fullscreen",
     "orientation": "portrait",
-    "scope": ".",
+    "scope": "/",
     "icons": [{
         "src": "/1.png",
         "sizes": "144x144",
         "type": "image/png"
       }],
-    "start_url": "."
+    "start_url": "/"
   }
