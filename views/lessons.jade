@@ -8,17 +8,18 @@ block content
     .tile.is-parent
       .tile.is-child.box.card
         div.title= Class.Class
-        br
-        for Lesson, i in Class.lessons
-          if i == 0
-            p.subtitle Понеділок
-          if i == 1
-            p.subtitle Вівторок
-          if i == 2
-            p.subtitle Середа
-          if i == 3
-            p.subtitle Четвер
-          if i == 4
-            p.subtitle П'ятниця
-          p= Lesson 
-          br
+        ul.menu-list
+          for Lesson, i in Class.lessons
+            br
+            if i == 0
+              p.menu-label Понеділок
+            if i == 1
+              p.menu-label Вівторок
+            if i == 2
+              p.menu-label Середа
+            if i == 3
+              p.menu-label Четвер
+            if i == 4
+              p.menu-label П'ятниця
+            for Lesn, i in Lesson
+              li= Lesn
