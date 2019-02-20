@@ -1,19 +1,16 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
 let db = require("./db.lib");
-//Require Routers
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var authRouter = require('./routes/auth');
-var lessonsRouter = require('./routes/lessons');
-var fmRouter = require('./routes/fm');
+let indexRouter = require('./routes/index');
+let lessonsRouter = require('./routes/lessons');
+let fmRouter = require('./routes/fm');
 
-var app = express();
+let app = express();
 
-var http = require("http");
+let http = require("http");
 setInterval(function() {
     http.get("http://lit79p.herokuapp.com");
 }, 15000);
@@ -23,7 +20,6 @@ app.use((req,res,next)=>{
   next();
 });
 
-// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
@@ -31,27 +27,16 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Use Routers:
-app.use('/', indexRouter);
-app.use('/', usersRouter);
-app.use('/auth', authRouter(db));
-app.use('/lessons', lessonsRouter(db));
-app.use('/fm', fmRouter);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use('/platform/api/', indexRouter);
+app.use('/platform/api/lessons', lessonsRouter(db));
+app.use('/platform/fm', fmRouter);
+app.use((req, res, next) => {
   next(createError(404));
 });
-
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
+app.use(express.static(path.join(__dirname, 'frontend', 'dist')));
+app.use((err, req, res, next) => {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
   res.status(err.status || 500);
   res.render('error');
 });

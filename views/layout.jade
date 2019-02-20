@@ -3,13 +3,7 @@ html
   head
     title= title
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    meta(name='apple-mobile-web-app-title', content='79')
-    meta(name='apple-mobile-web-app-status-bar-style', content='black')
-    link(rel='manifest', href='/manifest.json')
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src="https://cdn.jsdelivr.net/mojs/0.265.6/mo.min.js")
-    script(src="https://cdn.jsdelivr.net/mojs-player/0.43.15/mojs-player.min.js")
-    script(src="/javascripts/main.js")
+    meta(charset="utf-8")      
   div.bg
-  body.content
+  body.content(style="padding: 15px; font-family: monospace;")
     block content
