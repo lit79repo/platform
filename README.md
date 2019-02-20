@@ -21,7 +21,16 @@
         [{"Class":"8-A","lessons":[["Рос. м.","Хімія","Алгебра","Алгебра","Фіз-ра","Заруб.","Алгл. м."],["Біологія","Хімія","Фіз-ра","Укр. м.","Укр. л.","Англ. м."],["Геог.","Інф.","Інф.","Фізіка","Біологія","Зар. л.","Англ. м."],["Геог.","Укр. м.","Укр. л.","Іст. У.","Алгебра","Англ. м."],["Техн.","Іст. В.","Фіз-ра","Фізіка","Геом.","Геом.","ОБЖ"]]}]
         ```
 
-* __Files:__ Will be soon...
+* __Files:__ 
+    * Accessing files:
+     ```
+     # for exmaple we have:
+     # User: 01
+     # File: test.html
+     # we can access it RAW by: 
+     https://lit79p.herokuapp.com/fm/raw/test.html 
+     # using User 01 credentials in HTTP Basic Authorization.
+     ```
 
 ### Starting project.
 
