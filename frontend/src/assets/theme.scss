@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+@import "~vue-material/dist/theme/engine"; 
+
+@include md-register-theme("default", (
+  primary: #374047,
+  accent: #bec4c8 
+));
+
+@include md-register-theme("dark", (
+  primary: #1b1f22,
+  accent: #7f8a93 
+));
+
+@import "~vue-material/dist/theme/all"; 
